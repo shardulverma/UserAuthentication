@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+  .auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+  }
+  .form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+  }
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  .input-group {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #757575;
+  }
+  input:focus { outline: none; }
+  label {
+    color: #999;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+  }
+  input:focus ~ label, input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+  }
+  .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+  }
+  .bar:before { left: 50%; }
+  .bar:after { right: 50%; }
+  input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width: 50%;
+  }
+  .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  input:focus ~ .highlight {
+    animation: inputHighlighter 0.3s ease;
+  }
+  @keyframes inputHighlighter {
+    from { background: #5264AE; }
+    to { width: 0; background: transparent; }
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: #5264AE;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .submit-btn:hover {
+    background: #4254A3;
+  }
+  .toggle-text {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .toggle-btn {
+    background: none;
+    border: none;
+    color: #5264AE;
+    cursor: pointer;
+    font-size: inherit;
+    text-decoration: underline;
+  }
